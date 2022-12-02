@@ -12,9 +12,13 @@ For the purpose of these instructions, I'm assuming all the files git-completion
 
   
 2) Create a folder name .zsh in your home directory:
-  - `mkdir ~/.zsh`
+  ```bash
+  mkdir ~/.zsh
+  ```
   
 3) create a link (or copy file) to ~/dotfiles/git-completions.zsh, BUT IT MUST BE CALLED _git
-  - `ln -s ~/dotfiles/git-prompt.sh ~/.zsh/_git`
+  ```bash
+  ln -s ~/dotfiles/git-prompt.sh ~/.zsh/_git
+  ```
   
   
