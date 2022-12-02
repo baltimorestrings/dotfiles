@@ -39,7 +39,7 @@ PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
 
 #####  COMPLETIONS
 fpath=(~/.zsh $fpath)
-zstyle ':completion:*:*:git:*' script ~/dotfiles/git-completion.bash
+zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 autoload -Uz compinit && compinit
 
 

@@ -7,6 +7,8 @@ done
 
 [[ -f ~/zsh ]] || mkdir ~/zsh
 
+touch ~/zsh/_ZSH_COMPLETIONS_FOLDER_
+
 ## install/update zsh git-completions
 echo -e "Installing git-completion.zsh as ~/.zsh/_git"
 curl  -o ~/.zsh/_git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
