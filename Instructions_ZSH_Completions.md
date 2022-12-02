@@ -31,7 +31,7 @@ Run the script [download_git_stuff](download_git_stuff.sh) in your dotfiles fold
   mkdir ~/.zsh
   
   # make a link to git-completions.zsh, but call it _git because zsh likes underscores or some shit? 
-  ln -s ~/dotfiles/git-completion.sh ~/.zsh/_git
+  ln -s ~/dotfiles/git-completion.zsh ~/.zsh/_git
   ```
   
   
