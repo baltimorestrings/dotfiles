@@ -1,24 +1,40 @@
 # Quick Instructions
 
-For the purpose of these instructions, I'm assuming all the files git-completions.bash, git-completions.zsh, git-prompt.sh exist in a folder called dotfiles in your home folder.
+I am assuming there is a folder called ~/dotfiles in your home folder. 
 
-1) Your ~/.zshrc will have to `source` git-completions.bash and add an fpath directive
+Obviously feel free to not use this if you'd prefer.
+
+1) Delete old and get newest versions of git files.
+
+```bash
+# delete old versions of files
+rm -rf ~/dotfiles/git-{completion,prompt}.{sh,bash}
+
+# run script that re-downloads all 3. See link below if you just want to copy paste the CURL commands
+./download_git_stuff.sh
+```
+
+Run the script [download_git_stuff](download_git_stuff.sh) in your dotfiles folder. It's just CURL commands, so feel free to open the file and run them manually.
+
+2) Your ~/.zshrc will have to `source` git-completions.bash and add an fpath directive, and an autoload
   - Add the following lines to your ~/.zshrc:
     ```bash
-    source ~/dotfiles/git-completion.bash
     fpath=(~/.zsh $fpath)
     zstyle ':completion:*:*:git:*' script ~/dotfiles/git-completion.bash
+    autoload -Uz compinit && compinit
     ```
 
   
-2) Create a folder name .zsh in your home directory:
+2) Set up the actual zsh link
   ```bash
+  # make a folder - we told zsh to check here for autocompletions
   mkdir ~/.zsh
-  ```
   
-3) create a link (or copy file) to ~/dotfiles/git-completions.zsh, BUT IT MUST BE CALLED _git
-  ```bash
+  # make a link to git-completions.zsh, but call it _git because zsh likes underscores or some shit? 
   ln -s ~/dotfiles/git-prompt.sh ~/.zsh/_git
   ```
   
   
+  
+### enjoy
+
