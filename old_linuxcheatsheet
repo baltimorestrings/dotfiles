@@ -1,0 +1,23 @@
+linux cheatheet
+
+mount process for chrooting:
+
+lsblk - show partitions
+blkid - show UUIDs
+
+fdisk -l - disk info
+
+efibootmgr -v - shows efi boot info
+  IMPORTANT - INSTALLING OS AS UEFI IS IMPOSSIBLE IF INSTALL MOUNTED AS BIOS
+  for checking partition table type: parted then p (select /dev/sdX)
+  Bios mode is MBR
+  EFI is GPT + FAT32
+yum reinstall grub2-efi
+yum reinstall kernel?
+
+(dev tools stuff goes here)
+
+rpm -ql <package_name> - what packages something installs
+mount -t proc proc /mnt/proc
+mount -t sysfs sys /mnt/sys
+mount -o bind /dev /mnt/dev
