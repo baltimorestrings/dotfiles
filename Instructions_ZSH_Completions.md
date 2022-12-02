@@ -38,3 +38,6 @@ Run the script [download_git_stuff](download_git_stuff.sh) in your dotfiles fold
   
 ### enjoy
 
+![alt_text](pics/demo.png)
+
+Note the branch names auto completing. Cool shit.
