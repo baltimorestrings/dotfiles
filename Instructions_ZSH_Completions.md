@@ -4,9 +4,11 @@ For the purpose of these instructions, I'm assuming all the files git-completion
 
 1) Your ~/.zshrc will have to `source` git-completions.bash and add an fpath directive
   - Add the following lines to your ~/.zshrc:
+    ```bash
     source ~/dotfiles/git-completion.bash
     fpath=(~/.zsh $fpath)
     zstyle ':completion:*:*:git:*' script ~/dotfiles/git-completion.bash
+    ```
 
   
 2) Create a folder name .zsh in your home directory:
