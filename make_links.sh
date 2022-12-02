@@ -1,4 +1,3 @@
-
 #!/bin/bash
 file_location=$(dirname $0)
 echo -e $file_location	
