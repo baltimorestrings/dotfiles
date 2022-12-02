@@ -8,4 +8,4 @@ done
 [[ -f ~/zsh ]] || mkdir ~/zsh
 
 ## install zsh git-completions
-[[ -f ~/zsh/_git ]] || curl  -o ~/zsh/_git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+[[ -f ~/zsh/_git ]] || curl  -o ~/.zsh/_git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
