@@ -1,0 +1,13 @@
+alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
+alias gl="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias clearswp="rm ~/logs/swap/*"
+alias ll="ls -lGhF"
+alias ls="ls -GF"
+alias clearvim="rm *~ &>/dev/null; rm ~/logs/swap/* &>/dev/null"
+alias oall="clearvim &>/dev/null; nvim *.*"
+alias code="cd ~/code/"
+alias ext="cd ~/code/extensions/"
+alias scrape="cd ~/code/scrapes"
+alias scrapes="scrape"
+alias dot="cd ~/dotfiles"
+alias vim=nvim
