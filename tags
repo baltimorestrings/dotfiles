@@ -1,0 +1,160 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+___git_complete	git-completion.bash	/^___git_complete ()$/;"	f
+__git	git-completion.bash	/^__git ()$/;"	f
+__git_aliased_command	git-completion.bash	/^__git_aliased_command ()$/;"	f
+__git_checkout_default_dwim_mode	git-completion.bash	/^__git_checkout_default_dwim_mode ()$/;"	f
+__git_complete	git-completion.bash	/^__git_complete ()$/;"	f
+__git_complete_command	git-completion.bash	/^__git_complete_command () {$/;"	f
+__git_complete_command	git-completion.zsh	/^__git_complete_command ()$/;"	f
+__git_complete_common	git-completion.bash	/^__git_complete_common () {$/;"	f
+__git_complete_config_variable_name	git-completion.bash	/^__git_complete_config_variable_name ()$/;"	f
+__git_complete_config_variable_name_and_value	git-completion.bash	/^__git_complete_config_variable_name_and_value ()$/;"	f
+__git_complete_config_variable_value	git-completion.bash	/^__git_complete_config_variable_value ()$/;"	f
+__git_complete_fetch_refspecs	git-completion.bash	/^__git_complete_fetch_refspecs ()$/;"	f
+__git_complete_file	git-completion.bash	/^__git_complete_file ()$/;"	f
+__git_complete_force_with_lease	git-completion.bash	/^__git_complete_force_with_lease ()$/;"	f
+__git_complete_index_file	git-completion.bash	/^__git_complete_index_file ()$/;"	f
+__git_complete_refs	git-completion.bash	/^__git_complete_refs ()$/;"	f
+__git_complete_remote_or_refspec	git-completion.bash	/^__git_complete_remote_or_refspec ()$/;"	f
+__git_complete_revlist	git-completion.bash	/^__git_complete_revlist ()$/;"	f
+__git_complete_revlist_file	git-completion.bash	/^__git_complete_revlist_file ()$/;"	f
+__git_complete_strategy	git-completion.bash	/^__git_complete_strategy ()$/;"	f
+__git_complete_symbol	git-completion.bash	/^__git_complete_symbol () {$/;"	f
+__git_complete_worktree_paths	git-completion.bash	/^__git_complete_worktree_paths ()$/;"	f
+__git_compute_all_commands	git-completion.bash	/^__git_compute_all_commands ()$/;"	f
+__git_compute_config_sections	git-completion.bash	/^__git_compute_config_sections ()$/;"	f
+__git_compute_config_vars	git-completion.bash	/^__git_compute_config_vars ()$/;"	f
+__git_compute_merge_strategies	git-completion.bash	/^__git_compute_merge_strategies ()$/;"	f
+__git_config_get_set_variables	git-completion.bash	/^__git_config_get_set_variables ()$/;"	f
+__git_count_arguments	git-completion.bash	/^__git_count_arguments ()$/;"	f
+__git_dequote	git-completion.bash	/^__git_dequote ()$/;"	f
+__git_dwim_remote_heads	git-completion.bash	/^__git_dwim_remote_heads ()$/;"	f
+__git_eread	git-prompt.sh	/^__git_eread ()$/;"	f
+__git_find_last_on_cmdline	git-completion.bash	/^__git_find_last_on_cmdline ()$/;"	f
+__git_find_on_cmdline	git-completion.bash	/^__git_find_on_cmdline ()$/;"	f
+__git_find_repo_path	git-completion.bash	/^__git_find_repo_path ()$/;"	f
+__git_func_wrap	git-completion.bash	/^__git_func_wrap ()$/;"	f
+__git_get_config_variables	git-completion.bash	/^__git_get_config_variables ()$/;"	f
+__git_get_option_value	git-completion.bash	/^__git_get_option_value ()$/;"	f
+__git_has_doubledash	git-completion.bash	/^__git_has_doubledash ()$/;"	f
+__git_have_func	git-completion.bash	/^__git_have_func () {$/;"	f
+__git_heads	git-completion.bash	/^__git_heads ()$/;"	f
+__git_index_files	git-completion.bash	/^__git_index_files ()$/;"	f
+__git_is_configured_remote	git-completion.bash	/^__git_is_configured_remote ()$/;"	f
+__git_list_merge_strategies	git-completion.bash	/^__git_list_merge_strategies ()$/;"	f
+__git_ls_files_helper	git-completion.bash	/^__git_ls_files_helper ()$/;"	f
+__git_main	git-completion.bash	/^__git_main ()$/;"	f
+__git_match_ctag	git-completion.bash	/^__git_match_ctag () {$/;"	f
+__git_pretty_aliases	git-completion.bash	/^__git_pretty_aliases ()$/;"	f
+__git_ps1	git-prompt.sh	/^__git_ps1 ()$/;"	f
+__git_ps1_colorize_gitstring	git-prompt.sh	/^__git_ps1_colorize_gitstring ()$/;"	f
+__git_ps1_show_upstream	git-prompt.sh	/^__git_ps1_show_upstream ()$/;"	f
+__git_reassemble_comp_words_by_ref	git-completion.bash	/^__git_reassemble_comp_words_by_ref()$/;"	f
+__git_refs	git-completion.bash	/^__git_refs ()$/;"	f
+__git_refs2	git-completion.bash	/^__git_refs2 ()$/;"	f
+__git_refs_remotes	git-completion.bash	/^__git_refs_remotes ()$/;"	f
+__git_remote_heads	git-completion.bash	/^__git_remote_heads ()$/;"	f
+__git_remotes	git-completion.bash	/^__git_remotes ()$/;"	f
+__git_sequencer_status	git-prompt.sh	/^__git_sequencer_status ()$/;"	f
+__git_support_parseopt_helper	git-completion.bash	/^__git_support_parseopt_helper () {$/;"	f
+__git_tags	git-completion.bash	/^__git_tags ()$/;"	f
+__git_zsh_bash_func	git-completion.zsh	/^__git_zsh_bash_func ()$/;"	f
+__git_zsh_cmd_alias	git-completion.zsh	/^__git_zsh_cmd_alias ()$/;"	f
+__git_zsh_cmd_all	git-completion.zsh	/^__git_zsh_cmd_all ()$/;"	f
+__git_zsh_cmd_common	git-completion.zsh	/^__git_zsh_cmd_common ()$/;"	f
+__git_zsh_main	git-completion.zsh	/^__git_zsh_main ()$/;"	f
+__gitcomp	git-completion.bash	/^__gitcomp ()$/;"	f
+__gitcomp	git-completion.zsh	/^__gitcomp ()$/;"	f
+__gitcomp_builtin	git-completion.bash	/^__gitcomp_builtin ()$/;"	f
+__gitcomp_direct	git-completion.bash	/^__gitcomp_direct ()$/;"	f
+__gitcomp_direct	git-completion.zsh	/^__gitcomp_direct ()$/;"	f
+__gitcomp_direct_append	git-completion.bash	/^__gitcomp_direct_append ()$/;"	f
+__gitcomp_direct_append	git-completion.zsh	/^__gitcomp_direct_append ()$/;"	f
+__gitcomp_directories	git-completion.bash	/^__gitcomp_directories ()$/;"	f
+__gitcomp_file	git-completion.bash	/^__gitcomp_file ()$/;"	f
+__gitcomp_file	git-completion.zsh	/^__gitcomp_file ()$/;"	f
+__gitcomp_file_direct	git-completion.bash	/^__gitcomp_file_direct ()$/;"	f
+__gitcomp_file_direct	git-completion.zsh	/^__gitcomp_file_direct ()$/;"	f
+__gitcomp_nl	git-completion.bash	/^__gitcomp_nl ()$/;"	f
+__gitcomp_nl	git-completion.zsh	/^__gitcomp_nl ()$/;"	f
+__gitcomp_nl_append	git-completion.bash	/^__gitcomp_nl_append ()$/;"	f
+__gitcomp_nl_append	git-completion.zsh	/^__gitcomp_nl_append ()$/;"	f
+__gitcompadd	git-completion.bash	/^__gitcompadd ()$/;"	f
+__gitcompappend	git-completion.bash	/^__gitcompappend ()$/;"	f
+__gitdir	git-completion.bash	/^__gitdir ()$/;"	f
+__gitk_main	git-completion.bash	/^__gitk_main ()$/;"	f
+_get_comp_words_by_ref	git-completion.bash	/^_get_comp_words_by_ref ()$/;"	f
+_git	git-completion.zsh	/^_git ()$/;"	f
+_git_add	git-completion.bash	/^_git_add ()$/;"	f
+_git_am	git-completion.bash	/^_git_am ()$/;"	f
+_git_apply	git-completion.bash	/^_git_apply ()$/;"	f
+_git_archive	git-completion.bash	/^_git_archive ()$/;"	f
+_git_bisect	git-completion.bash	/^_git_bisect ()$/;"	f
+_git_branch	git-completion.bash	/^_git_branch ()$/;"	f
+_git_bundle	git-completion.bash	/^_git_bundle ()$/;"	f
+_git_checkout	git-completion.bash	/^_git_checkout ()$/;"	f
+_git_cherry_pick	git-completion.bash	/^_git_cherry_pick ()$/;"	f
+_git_clean	git-completion.bash	/^_git_clean ()$/;"	f
+_git_clone	git-completion.bash	/^_git_clone ()$/;"	f
+_git_commit	git-completion.bash	/^_git_commit ()$/;"	f
+_git_config	git-completion.bash	/^_git_config ()$/;"	f
+_git_describe	git-completion.bash	/^_git_describe ()$/;"	f
+_git_diff	git-completion.bash	/^_git_diff ()$/;"	f
+_git_difftool	git-completion.bash	/^_git_difftool ()$/;"	f
+_git_fetch	git-completion.bash	/^_git_fetch ()$/;"	f
+_git_format_patch	git-completion.bash	/^_git_format_patch ()$/;"	f
+_git_fsck	git-completion.bash	/^_git_fsck ()$/;"	f
+_git_gitk	git-completion.bash	/^_git_gitk ()$/;"	f
+_git_grep	git-completion.bash	/^_git_grep ()$/;"	f
+_git_help	git-completion.bash	/^_git_help ()$/;"	f
+_git_init	git-completion.bash	/^_git_init ()$/;"	f
+_git_log	git-completion.bash	/^_git_log ()$/;"	f
+_git_ls_files	git-completion.bash	/^_git_ls_files ()$/;"	f
+_git_ls_remote	git-completion.bash	/^_git_ls_remote ()$/;"	f
+_git_ls_tree	git-completion.bash	/^_git_ls_tree ()$/;"	f
+_git_merge	git-completion.bash	/^_git_merge ()$/;"	f
+_git_merge_base	git-completion.bash	/^_git_merge_base ()$/;"	f
+_git_mergetool	git-completion.bash	/^_git_mergetool ()$/;"	f
+_git_mv	git-completion.bash	/^_git_mv ()$/;"	f
+_git_notes	git-completion.bash	/^_git_notes ()$/;"	f
+_git_pull	git-completion.bash	/^_git_pull ()$/;"	f
+_git_push	git-completion.bash	/^_git_push ()$/;"	f
+_git_range_diff	git-completion.bash	/^_git_range_diff ()$/;"	f
+_git_rebase	git-completion.bash	/^_git_rebase ()$/;"	f
+_git_reflog	git-completion.bash	/^_git_reflog ()$/;"	f
+_git_remote	git-completion.bash	/^_git_remote ()$/;"	f
+_git_replace	git-completion.bash	/^_git_replace ()$/;"	f
+_git_rerere	git-completion.bash	/^_git_rerere ()$/;"	f
+_git_reset	git-completion.bash	/^_git_reset ()$/;"	f
+_git_restore	git-completion.bash	/^_git_restore ()$/;"	f
+_git_revert	git-completion.bash	/^_git_revert ()$/;"	f
+_git_rm	git-completion.bash	/^_git_rm ()$/;"	f
+_git_send_email	git-completion.bash	/^_git_send_email ()$/;"	f
+_git_shortlog	git-completion.bash	/^_git_shortlog ()$/;"	f
+_git_show	git-completion.bash	/^_git_show ()$/;"	f
+_git_show_branch	git-completion.bash	/^_git_show_branch ()$/;"	f
+_git_sparse_checkout	git-completion.bash	/^_git_sparse_checkout ()$/;"	f
+_git_stage	git-completion.bash	/^_git_stage ()$/;"	f
+_git_stash	git-completion.bash	/^_git_stash ()$/;"	f
+_git_status	git-completion.bash	/^_git_status ()$/;"	f
+_git_submodule	git-completion.bash	/^_git_submodule ()$/;"	f
+_git_svn	git-completion.bash	/^_git_svn ()$/;"	f
+_git_switch	git-completion.bash	/^_git_switch ()$/;"	f
+_git_tag	git-completion.bash	/^_git_tag ()$/;"	f
+_git_whatchanged	git-completion.bash	/^_git_whatchanged ()$/;"	f
+_git_worktree	git-completion.bash	/^_git_worktree ()$/;"	f
+_git_zsh	git-completion.zsh	/^_git_zsh ()$/;"	f
+cdf	functions	/^function cdf() { # short for `cdfinder`$/;"	f
+dequote	git-completion.bash	/^	function dequote(p,    bs_idx, out, esc, esc_idx, dec) {$/;"	f
+diff	functions	/^	function diff() {$/;"	f
+escape	functions	/^function escape() {$/;"	f
+fs	functions	/^function fs() {$/;"	f
+mkd	functions	/^function mkd() {$/;"	f
+o	functions	/^function o() {$/;"	f
+tre	functions	/^function tre() {$/;"	f
+v	functions	/^function v() {$/;"	f
