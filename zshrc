@@ -9,6 +9,14 @@ $is_mac && test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.i
     # iTerm shell integration    
 
 echo -e "in ~/.zshrc (is_mac=$is_mac)"
+####### AUTOLOAD ###########################
+#
+# auto source any dotfile with the following names
+for file in ~/.{path,exports,aliases,functions,extra,secrets}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
 ####### PATH/SETTINGS #########################
 
 export PATH="$HOME/bin:$PATH"
@@ -35,9 +43,8 @@ BLUE="%{$fg[blue]%}"
 CYAN="%{$fg[cyan]%}"
 GREEN="%{$fg[green]%}"
 RED="%{$fg[red]%}"
-WHITE="%{$fg[white]%}"
-#LIGHT_GRAY='%{\[\033[0;37m\]%}'
-#VIOLET='{%\[\033[01;35m\]%}'
+REGWHITE="%{%b$fg[brightwhite]%}"
+BOLDWHITE="%{%B$fg[white]%}"
 
 setopt PROMPT_SUBST
 if [ -f $completions_and_prompt_folder/git-prompt.sh ]; then
@@ -47,7 +54,6 @@ if [ -f $completions_and_prompt_folder/git-prompt.sh ]; then
     GIT_PS1_SHOWUNTRACKEDFILES=true
     GIT_PS1_SHOWUPSTREAM="auto"
     GIT_PS1_HIDE_IF_PWD_IGNORED=true
-    GIT_PS1_SHOWCOLORHINTS=true
 
     source $completions_and_prompt_folder/git-prompt.sh
 
@@ -68,10 +74,10 @@ if [ -f $completions_and_prompt_folder/git-prompt.sh ]; then
         local __git_branch_color="$GREEN"
             # default "good" color for git branch
  
-        local __prompt_tail="$WHITE> "
+        local __prompt_tail="$BOLDWHITE> "
             # prompt tail, so the last thing of the prompt
 
-        local __user_input_color="$WHITE"
+        local __user_input_color="$REGWHITE"
             # color user input should be
  
         local __git_branch=$(__git_ps1)

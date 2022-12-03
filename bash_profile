@@ -2,6 +2,7 @@
 os=`uname`
 is_mac=false
 has_ruby=false
+completions_and_prompt_dir="$HOME/.completions"
 [[ $os == "Darwin" ]] && is_mac=true
 $(which ruby &>/dev/null) && has_ruby=true
 
@@ -26,7 +27,7 @@ fi
 [ -f /etc/bash_completion ] && source /etc/bash_completion
   # /etc/bash_completion
 
-[ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
+[ -f $completions_and_prompt_dir/git-completion.bash ] && source $completions_and_prompt_dir/git-completion.bash
   # git completions - autocomplete branches and so on
 
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
@@ -78,7 +79,7 @@ VIOLET='\[\033[01;35m\]'
 BOLDWHITE='\[\e[97m\e[1m\]'
 REGWHITE='\[\e[0m\]'
  
-if [ -f ~/.git-prompt.sh ]; then
+if [ -f $completions_and_prompt_dir/git-prompt.sh ]; then
     # if .git-prompt.sh exists, we'll define a prompt func, wire it into bash, and source git-prompts.sh
     GIT_PS1_SHOWDIRTYSTATE=true
     GIT_PS1_SHOWSTASHSTATE=true
@@ -87,26 +88,32 @@ if [ -f ~/.git-prompt.sh ]; then
     GIT_PS1_HIDE_IF_PWD_IGNORED=true
     GIT_PS1_SHOWCOLORHINTS=true
     
-    source ~/.git-prompt.sh
+    # actually call it
+    source $completions_and_prompt_dir/git-prompt.sh
 
     function color_my_prompt {
         ###This function will get called by bash every time: ###
         
-        # define some variables with text/colors for prompt:
+        #prompt components
         local __mac_ari_prefix="@ri "
         local __user_and_host="$BOLDWHITE\u@\h"
-        $is_mac && local __prompt_prefix="$__mac_ari_prefix"
-        $is_mac || local __prompt_prefix="$__user_and_host"
+            # diff prefixes for diff spots
+
         local __cur_location="$BLUE\W" # capital 'W': current directory, small 'w': full file path
+
         local __git_branch_color="$GREEN"
+
         local __prompt_tail="$BOLDWHITE>"
+
         local __user_input_color="$REGWHITE"
-        local __git_branch=$(__git_ps1);  # requires git-prompt.sh to be sourced
+
+        local __git_branch=`__git_ps1`;  # requires git-prompt.sh to be sourced
+
         local __venv_prompt=""
         local __venv_color="$CYAN"
-        [[ -n $VIRTUAL_ENV ]] && __venv_prompt="($(basename $VIRTUAL_ENV)) "
+        [[ -n $VIRTUAL_ENV ]] && __venv_prompt="(`basename $VIRTUAL_ENV`) "
         
-        # color git branch name depending on state
+        # git branch colors
         if [[ "${__git_branch}" =~ "*" ]]; then     # if repository is dirty
             __git_branch_color="$RED"
         elif [[ "${__git_branch}" =~ "$" ]]; then   # if there is something stashed
@@ -117,7 +124,9 @@ if [ -f ~/.git-prompt.sh ]; then
             __git_branch_color="$CYAN"
         fi
          
-        # update prompt var
+        # actually update prompt
+        $is_mac && local __prompt_prefix="$__mac_ari_prefix"
+        $is_mac || local __prompt_prefix="$__user_and_host"
         PS1="$__venv_color$__venv_prompt$__prompt_prefix$__cur_location$__git_branch_color$__git_branch$__prompt_tail$__user_input_color "
     }
      
