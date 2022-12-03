@@ -25,36 +25,54 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'dracula/vim'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'vim-pandoc/vim-pandoc'
+"Plug 'vim-pandoc/vim-pandoc-syntax'
+
+"Plug 'vim-pandoc/vim-pandoc'
 call plug#end()
 
 " ==== VARIABLE STUFF  =========================================================
-" TAGS I need to finally learn to use
+set nospell
+    " spelling corrections look gross
+   
 set tags=./tags;,tags
-" nocompatible only matters for vim. neovim forever
+    " I need to finally learn to use tags
+
 set nocompatible
+    " nocompatible only matters for vim. neovim forever
+
 filetype plugin on
-" Set swap directory so I can actually getfrid of stuff
-set dir=$HOME/logs/swap//
-set backupdir=$HOME/logs/swap//
-set undodir=$HOME/logs/swap//
-" some path / search stuff:
-set path=.,**   " add filetype specific adds for STL stuff
-set suffixesadd=.py,.txt,.csv,.java,.js,.c,.cpp
-" allows switch between unsaved buffers:
+    " this allows vim to try to figure out what filetype something is
+
+set dir=$HOME//logs/swap/
+    " swap files
+
+set backupdir=$HOME/logs/swap/
+    " ~ files
+
+set undodir=$HOME/logs/swap/
+    " undofiles
+
+set path=.,**
+set suffixesadd=.py,.txt,.csv,.java,.js,.c,.cpp,.rb
+    " something to do with `gf` command idk
+     
 set hidden 
-" redraw screen less often
+    " not sure
+
 set lazyredraw
-" syntax highlighting!
+    "   redraw screen less often
 syntax on
-" status bar lives forever. cool with powerline or wtvr 
+    " syntax highlighting!
+
 set laststatus=2  
-" Ignore case except at beginning of words
-set ignorecase
+    " status bar lives forever. cool with powerline or wtvr 
+
 set smartcase
-" Experiment failed. I like no word wrap
+    " Ignore case except at beginning of words
+
 set nowrap
+    " word wrap defaults to off
+    
 " Adjust system undo levels
 set undolevels=100
 set undofile                " Save undos after file closes
@@ -104,8 +122,6 @@ set conceallevel=1
 
 " ==== KEY REMAPPING ===========================================================
 let mapleader="\<SPACE>"
-" shortcut for system copy paste
-nnoremap <leader>y "=Y
  " lets me escape from search:
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>  
 " This makes H/J/K/L work even on wrapped lines
@@ -141,8 +157,8 @@ nnoremap <silent> <leader>& :b16 <cr>
 nnoremap <silent> <leader>* :b17 <cr>
 nnoremap <silent> <leader>( :b18 <cr>
 nnoremap <silent> <leader>) :b19 <cr>
-nnoremap <silent> <leader>= :bnext <cr>
-nnoremap <silent> <leader>- :bprev <cr>
+nnoremap <silent> <leader>n :bnext <cr>
+nnoremap <silent> <leader>p :bprev <cr>
 nnoremap <silent> <leader><leader> :blast <cr>
 nnoremap <silent> <leader>wq :w <cr> :bwipeout! <cr>
 nnoremap <silent> <leader>q :bwipeout! <cr>
@@ -152,20 +168,6 @@ nnoremap ` :VimFiler -explorer<CR>
 nnoremap ~ :VimFilerCurrentDir -explorer -find<CR>
  " Switches buffers too
 nnoremap <Leader><Leader> <c-^>  
-nnoremap <Left> :vertical resize -1<CR>
-nnoremap <Right> :vertical resize +1<CR>
-nnoremap <Up> :resize -1<CR>
-nnoremap <Down> :resize +1<CR>
-" terminal shortcut
-nnoremap <silent> <C-p> :vsplit <cr> :terminal <cr> :vertical resize 70 <cr> i ipython <cr>
-nnoremap <silent> <C-t> :vsplit <cr> :terminal <cr> :vertical resize 70 <cr> i <cr>
-" Disable arrow keys completely in Insert Mode
-imap <up> fuck
-imap <down> BOOP
-imap <left> <nop>
-imap <right> <nop>
-" Terminal escape!
-tnoremap <Esc> <C-\><C-n>
 
 " ==== INDENT GUIDES ========================================================
 let g:indent_guides_auto_colors = 1
@@ -193,7 +195,7 @@ highlight Folded ctermfg=lightgray ctermbg=bg
 " === DEFAULT VIM FILER ===============================================================
 let g:netrw_banner = 1       " disable banner
 let g:netrw_preview = 1      " open previews vertically
-let g:netrw_list_hide = '.*\.swp,.git/,*.~'
+let g:netrw_list_hide = '.*\.swp,.git/,*.~,*egg*,build,**pycache*'
 let g:indentLine_char = '│'
 let g:netrw_banner = 0
 let g:netrw_browse_split = 1
@@ -244,12 +246,14 @@ endif
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " " This should turn off swap files for wiki
-" Cause it crashes everything, Currently doesn't work
-autocmd BufRead,BufNewFile,BufRead */wimwikimd/*.md set noswapfile
+autocmd BufRead,BufNewFile,BufRead */vimwikimd/*.md set noswapfile
 au BufNewFile,BufFilePre,BufRead *.md setfiletype=markdown
+autocmd FileType vimwiki set ft=markdown
 let g:vimwiki_list = [{'path': '~/vimwikimd/',
                        \ 'syntax': 'markdown', 'ext': '.md'}]
+
+let g:vimwiki_global_ext = 0
+
 let g:pandoc#modules#disabled = [ "spell" ]
 
 " The following sets default markdown interpreter rather than vimWiki
-autocmd FileType vimwiki set ft=markdown
