@@ -10,9 +10,17 @@ for file in bashrc path exports aliases functions extra secrets bash_profile zsh
     if [[ -f $dotfiles_folder/$file ]]; then
         echo -e "found $file in dotfiles, creating ~/.$file"
         rm -rf ~/.$file
-        ln -s $dotfiles_folder/$file ~/.$file
+        ln -s $dotfiles_folder/$file $HOME/.$file
     fi
 done
+
+# set up neovim-style RC, if detected
+if [[ -f $dotfiles_folder/neovimrc ]]; then
+    echo -e "installing discovered file neovimrc"
+    mkdir -p ~/.config/nvim &>/dev/null
+    rm ~/.config/nvim/init.vim &>/dev/null
+    ln -s $dotfiles_folder/neovimrc $HOME/.config/nvim/init.vim
+fi
 
 # clean up old attempts
 rm -rf ~/.zsh ~zsh &>/dev/null
