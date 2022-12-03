@@ -95,8 +95,8 @@ if [ -f $completions_and_prompt_dir/git-prompt.sh ]; then
         ###This function will get called by bash every time: ###
         
         #prompt components
-        local __mac_ari_prefix="@ri "
-        local __user_and_host="$BOLDWHITE\u@\h"
+        local __mac_ari_prefix="ari:"
+        local __user_and_host="$BOLDWHITEari:\h:"
             # diff prefixes for diff spots
 
         local __cur_location="$BLUE\W" # capital 'W': current directory, small 'w': full file path

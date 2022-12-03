@@ -171,15 +171,24 @@ tnoremap <Esc> <C-\><C-n>
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_enable_on_vim_startup = 1
 " === OTHER ====================================================================
-let g:python3_host_prog ="/home/afrankel02/.nvim_venv/bin/python3"
+let g:python3_host_prog = $HOME . '/.nvim_venv/bin/python3.8'
+
 let g:loaded_python_provider = 1    "    find out if that means i can play with it
+
 colorscheme dracula
+
 let g:airline#extensions#tabline#enabled=1
+
 let g:airline#extensions#tabline#formatter = 'unique_tail'  "I think this is tab titling
+
 let g:airline_powerline_fonts=2
+
 let g:spacegray_underline_search = 2
+
 let g:spacegray_italicize_comments = 2
+
 highlight Folded ctermfg=lightgray ctermbg=bg
+
 
 " === DEFAULT VIM FILER ===============================================================
 let g:netrw_banner = 1       " disable banner

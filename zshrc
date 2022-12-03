@@ -66,10 +66,10 @@ if [ -f $completions_and_prompt_folder/git-prompt.sh ]; then
         
         ###### https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html #######
         #      \- site has a full list of variables you can use in this prompt building
-        local __mac_prefix="@ri "
+        local __mac_prefix="ari:"
             # prefix that will get used on MAC
  
-        local __user_and_host="%n@%m"
+        local __user_and_host="ari:%m"
             # prefix that will get used on _nix. %m == shortened hostname, if you want the full one flip it to %M
 
         local __cur_location="$BLUE%~" # capital 'W': current directory, small 'w': full file path
