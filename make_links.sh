@@ -85,7 +85,7 @@ else
     curl -s "$VIMPLUG_URL" > "$nvim_autoload_dir/plug.vim"
     echo next time you open nvim, please run :PlugInstall, then :PlugUpdate
 fi
-/Users/afrankel02/.local/share/nvim/site/autoload/plug.vim
+#
 ########## get vim dirs pointed at neovim dirs
 
 mkdir ~/.vim &>/dev/null
