@@ -108,7 +108,7 @@ fi
 
 
 #####  COMPLETIONS
-fpath=(~/.zsh $fpath)
+fpath=($completions_and_prompt_folder $fpath)
 zstyle ':completion:*:*:git:*' script $completions_and_prompt_folger/git-completion.bash
 autoload -Uz compinit && compinit
 
