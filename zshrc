@@ -43,6 +43,7 @@ BLUE="%{$fg[blue]%}"
 CYAN="%{$fg[cyan]%}"
 GREEN="%{$fg[green]%}"
 RED="%{$fg[red]%}"
+LIGHT_GRAY="%{%b$fg[white]%}"
 REGWHITE="%{%b$fg[brightwhite]%}"
 BOLDWHITE="%{%B$fg[white]%}"
 
@@ -89,13 +90,13 @@ if [ -f $completions_and_prompt_folder/git-prompt.sh ]; then
             # python virtualenv stuff
         
         ###### 
-        if [[ "${__git_branch}" =~ "\*" ]]; then     # if repository is dirty
+        if [[ "${__git_branch}" == *"*"* ]]; then     # if repository is dirty
             __git_branch_color="$RED"
-        elif [[ "${__git_branch}" =~ "\$" ]]; then   # if there is something stashed
+        elif [[ "${__git_branch}" == *"$"* ]]; then   # if there is something stashed
             __git_branch_color="$YELLOW"
-        elif [[ "${__git_branch}" =~ "%" ]]; then   # if there are only untracked files
+        elif [[ "${__git_branch}" == *"%"* ]]; then   # if there are only untracked files
             __git_branch_color="$LIGHT_GRAY"
-        elif [[ "${__git_branch}" =~ "+" ]]; then   # if there are staged files
+        elif [[ "${__git_branch}" == *"+"* ]]; then   # if there are staged files
             __git_branch_color="$CYAN"
         fi # Color all the other git branch statuses
          
