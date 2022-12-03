@@ -19,6 +19,9 @@ unset file;
 
 ####### PATH/SETTINGS #########################
 
+$is_mac && export SSH_AUTH_SOCK=$HOME/.yubiagent/sock
+    # needed for yubikey
+
 export PATH="$HOME/bin:$PATH"
     # personal bin
 
