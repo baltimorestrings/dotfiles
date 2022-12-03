@@ -36,9 +36,9 @@ set tags=./tags;,tags
 set nocompatible
 filetype plugin on
 " Set swap directory so I can actually getfrid of stuff
-set dir=/Users/afrankel02/logs/swap//
-set backupdir=/Users/afrankel02/logs/swap//
-set undodir=/Useres/afrankel02/logs/swap//
+set dir=$HOME/logs/swap//
+set backupdir=$HOME/logs/swap//
+set undodir=$HOME/logs/swap//
 " some path / search stuff:
 set path=.,**   " add filetype specific adds for STL stuff
 set suffixesadd=.py,.txt,.csv,.java,.js,.c,.cpp
@@ -112,8 +112,8 @@ nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 nnoremap j gj
 nnoremap k gk
 " some shortcuts: EditVimRC and SourceVimRC
-nnoremap <silent> <leader>ev  :vsplit /Users/afrankel02/dotfiles/vimrc<cr>
-nnoremap <silent> <leader>sv :source ~/dotfiles/vimrc<cr>
+nnoremap <silent> <leader>ev  :vsplit $HOME/dotfiles/neovimrc<cr>
+nnoremap <silent> <leader>sv :source $HOME/dotfiles/neovimrc<cr>
 "" Ale is cool
 nnoremap <silent> <C-j> :ALEPrev<cr>
 nnoremap <silent> <C-k> :ALENext<cr>
@@ -171,8 +171,7 @@ tnoremap <Esc> <C-\><C-n>
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_enable_on_vim_startup = 1
 " === OTHER ====================================================================
-" Seriously, you don't know half of this stuff. What does this do:
-let g:python3_host_prog ="/Users/afrankel02/.nvim_venv/bin/python3"
+let g:python3_host_prog ="/home/afrankel02/.nvim_venv/bin/python3"
 let g:loaded_python_provider = 1    "    find out if that means i can play with it
 colorscheme dracula
 let g:airline#extensions#tabline#enabled=1

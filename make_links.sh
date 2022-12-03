@@ -1,4 +1,7 @@
 #!/bin/bash
+is_mac=false
+[[ `uname` == "Darwin" ]] && is_mac == true
+
 path_to_this_file="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")" 
 dotfiles_folder=$(dirname $path_to_this_file)
 completions_and_prompt_folder="$HOME/.completions"
@@ -14,6 +17,11 @@ for file in bashrc path exports aliases functions extra secrets bash_profile zsh
     fi
 done
 
+# install neovim if not present
+which nvim &>/dev/null || sudo yum install -y neovim --enablerepo=epel || brew install neovim
+
+# set up vimplug
+~/.local/share/nvim/plugged
 # set up neovim-style RC, if detected
 if [[ -f $dotfiles_folder/neovimrc ]]; then
     echo -e "installing discovered file neovimrc"
@@ -22,11 +30,22 @@ if [[ -f $dotfiles_folder/neovimrc ]]; then
     ln -s $dotfiles_folder/neovimrc $HOME/.config/nvim/init.vim
 fi
 
+# set up vim.plug in the neovim autoload dir
+nvim_autoload_dir="${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim
+if [[ -f $nvim_autoload_dir ]]; then
+    echo vim.plug already detected
+else
+    echo installing vim-plug to $nvim_autoload_dir
+    sh -c 'curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    echo next time you open nvim, please run :PlugInstall, then :PlugUpdate
+fi
+
 # clean up old attempts
 rm -rf ~/.zsh ~zsh &>/dev/null
 
 # make folder for zsh completions:
-mkdir $completions_and_prompt_folder 
+mkdir $completions_and_prompt_folder &>/dev/null
 
 ## install/update zsh git-completions
 echo -e "Installing git-completion.zsh as $completions_and_prompt_folder/_git"
