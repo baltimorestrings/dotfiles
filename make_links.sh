@@ -38,7 +38,7 @@ echo -e Using "$dotfiles_folder" as dotfiles folder
 
 ####### dotfile creation #####################################################################
 
-for file in "{FILES_TO_DOTFILE[@]}"; do
+for file in "${FILES_TO_DOTFILE[@]}"; do
     # sort through every file type we wwanna dotfile
 
     if [[ -f $dotfiles_folder/$file ]]; then
@@ -51,13 +51,24 @@ for file in "{FILES_TO_DOTFILE[@]}"; do
     fi
 done
 
+
+mkdir ~/bin &>/dev/null
+    # create personal bin if not already created
+
+for file in "$dotfiles_folder"/bin/*; do
+    # for each file dotfiles/bin, install an executable
+    install_target="$HOME/bin"/`basename $file`
+    [[ ! -f $install_target ]] && ln -s $file $install_target && chmod +x $install_target
+done
+
+
 [[ `id -u` == 0 ]] && ln -s /root/.bash_profile /root/.bashrc
     # if we're root, symlink /root/.profile to /root/.bashrc to support non-login shells
 
 ###### install neovim ######################################################################
 
 which nvim &>/dev/null || \
-( 
+(
     echo "installing neovim, may take a sec..." \
     && is_installed yum && sudo yum install -y neovim --enablerepo=epel  \
    || brew install neovim &>/dev/null \
@@ -75,7 +86,7 @@ if [[ -f $dotfiles_folder/neovimrc ]]; then
 fi
 
 nvim_autoload_dir="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/"
-   # build our autoload dir for neovim 
+   # build our autoload dir for neovim
 
 if [[ -f $nvim_autoload_dir/vim.plug ]]; then
     echo vim.plug already installed
@@ -106,4 +117,4 @@ curl  -s  https://raw.githubusercontent.com/git/git/master/contrib/completion/gi
 # install the rest of the fleet
 echo -e "Installing/Updating git-completion.bash (still needed for ZSH completions) and git-prompt.sh in $COMPLETIONS_AND_PROMPT_FOLDER"
 curl -s https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh  >  $COMPLETIONS_AND_PROMPT_FOLDER/git-prompt.sh
-curl -s https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > $COMPLETIONS_AND_PROMPT_FOLDER/git-completion.bash 
+curl -s https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > $COMPLETIONS_AND_PROMPT_FOLDER/git-completion.bash
